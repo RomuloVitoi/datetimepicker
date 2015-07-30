@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.fourmob.datetimepicker.R;
+import com.fourmob.datetimepicker.Utils;
 import com.nineoldandroids.animation.Keyframe;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.animation.PropertyValuesHolder;
@@ -91,7 +92,7 @@ public class RadialSelectorView extends View {
 
         Resources res = context.getResources();
 
-        int blue = res.getColor(R.color.datepicker_primary);
+        int blue = Utils.accentColor(context);
         mPaint.setColor(blue);
         mPaint.setAntiAlias(true);
 

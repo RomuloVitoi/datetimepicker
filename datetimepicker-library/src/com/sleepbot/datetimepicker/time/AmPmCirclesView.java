@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.fourmob.datetimepicker.R;
+import com.fourmob.datetimepicker.Utils;
 
 import java.text.DateFormatSymbols;
 
@@ -74,7 +75,7 @@ public class AmPmCirclesView extends View {
         Resources res = context.getResources();
         mWhite = res.getColor(R.color.white);
         mAmPmTextColor = res.getColor(R.color.ampm_text_color);
-        mBlue = res.getColor(R.color.datepicker_primary);
+        mBlue = Utils.accentColor(context);
         String typefaceFamily = res.getString(R.string.sans_serif);
         Typeface tf = Typeface.create(typefaceFamily, Typeface.NORMAL);
         mPaint.setTypeface(tf);
