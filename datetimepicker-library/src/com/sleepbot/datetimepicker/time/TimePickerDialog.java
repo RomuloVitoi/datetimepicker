@@ -31,6 +31,7 @@ import android.view.View.OnClickListener;
 import android.view.View.OnKeyListener;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -257,6 +258,7 @@ public class TimePickerDialog extends DialogFragment implements RadialPickerLayo
         });
 
         mDoneButton = (TextView) view.findViewById(R.id.done_button);
+        mDoneButton.setTextColor(Utils.colorState(mDoneButton.getContext()));
         mDoneButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -265,7 +267,9 @@ public class TimePickerDialog extends DialogFragment implements RadialPickerLayo
         });
         mDoneButton.setOnKeyListener(keyboardListener);
         
-        view.findViewById(R.id.cancel_button).setOnClickListener(new OnClickListener() {
+        Button cancelButton = (Button) view.findViewById(R.id.cancel_button);
+        cancelButton.setTextColor(Utils.colorState(cancelButton.getContext()));
+        cancelButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();

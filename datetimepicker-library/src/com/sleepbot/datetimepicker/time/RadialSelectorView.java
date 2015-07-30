@@ -92,7 +92,7 @@ public class RadialSelectorView extends View {
 
         Resources res = context.getResources();
 
-        int blue = Utils.accentColor(context);
+        int blue = Utils.getColor(context, R.attr.colorAccent);
         mPaint.setColor(blue);
         mPaint.setAntiAlias(true);
 

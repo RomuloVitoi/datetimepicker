@@ -2,6 +2,7 @@ package com.fourmob.datetimepicker;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.util.TypedValue;
@@ -79,11 +80,25 @@ public class Utils {
         }
     }
 
-    public static int accentColor(Context context) {
+    public static int getColor(Context context, int attr) {
         TypedValue typedValue = new TypedValue();
-        TypedArray a = context.obtainStyledAttributes(typedValue.data, new int[]{R.attr.colorAccent});
+        TypedArray a = context.obtainStyledAttributes(typedValue.data, new int[]{attr});
         int color = a.getColor(0, 0);
         a.recycle();
         return color;
+    }
+
+
+    public static ColorStateList colorState(Context context) {
+        return new ColorStateList(
+                new int[][]{
+                        new int[]{-android.R.attr.enabled},
+                        new int[]{android.R.attr.enabled}
+                },
+                new int[]{
+                        getColor(context, R.attr.colorPrimary),
+                        context.getResources().getColor(R.color.done_text_color_disabled)
+                }
+        );
     }
 }

@@ -324,7 +324,9 @@ public class DatePickerDialog extends DialogFragment implements View.OnClickList
 		mAnimator.setOutAnimation(outAlphaAnimation);
 
 		Button doneButton = ((Button) view.findViewById(R.id.done_button));
+        doneButton.setTextColor(Utils.colorState(doneButton.getContext()));
         Button cancelButton = ((Button) view.findViewById(R.id.cancel_button));
+        cancelButton.setTextColor(Utils.colorState(cancelButton.getContext()));
 		doneButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
                 onDoneButtonClick();
