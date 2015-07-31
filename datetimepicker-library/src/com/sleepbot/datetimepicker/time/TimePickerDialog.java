@@ -258,7 +258,7 @@ public class TimePickerDialog extends DialogFragment implements RadialPickerLayo
         });
 
         mDoneButton = (TextView) view.findViewById(R.id.done_button);
-        mDoneButton.setTextColor(Utils.colorState(mDoneButton.getContext()));
+        mDoneButton.setTextColor(Utils.colorState(mDoneButton.getContext(), android.R.attr.enabled, R.attr.colorPrimary, R.color.done_text_color_disabled));
         mDoneButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -268,7 +268,7 @@ public class TimePickerDialog extends DialogFragment implements RadialPickerLayo
         mDoneButton.setOnKeyListener(keyboardListener);
         
         Button cancelButton = (Button) view.findViewById(R.id.cancel_button);
-        cancelButton.setTextColor(Utils.colorState(cancelButton.getContext()));
+        cancelButton.setTextColor(Utils.colorState(cancelButton.getContext(), android.R.attr.enabled, R.attr.colorPrimary, R.color.done_text_color_disabled));
         cancelButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

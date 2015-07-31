@@ -89,15 +89,15 @@ public class Utils {
     }
 
 
-    public static ColorStateList colorState(Context context) {
+    public static ColorStateList colorState(Context context, int state, int colorEnabled, int colorDisabled) {
         return new ColorStateList(
                 new int[][]{
-                        new int[]{-android.R.attr.enabled},
-                        new int[]{android.R.attr.enabled}
+                        new int[]{-state},
+                        new int[]{state}
                 },
                 new int[]{
-                        getColor(context, R.attr.colorPrimary),
-                        context.getResources().getColor(R.color.done_text_color_disabled)
+                        getColor(context, colorEnabled),
+                        context.getResources().getColor(colorDisabled)
                 }
         );
     }

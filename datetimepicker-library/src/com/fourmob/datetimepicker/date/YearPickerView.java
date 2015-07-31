@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.fourmob.datetimepicker.R;
+import com.fourmob.datetimepicker.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -110,6 +111,7 @@ public class YearPickerView extends ListView implements AdapterView.OnItemClickL
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             TextViewWithCircularIndicator v = (TextViewWithCircularIndicator) super.getView(position, convertView, parent);
+			v.setTextColor(Utils.colorState(parent.getContext(), android.R.attr.state_pressed, R.attr.colorPrimaryDark, R.color.date_picker_text_normal));
             v.requestLayout();
             int year = getYearFromTextView(v);
             boolean selected = mController.getSelectedDay().year == year;
