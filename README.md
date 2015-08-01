@@ -7,7 +7,7 @@ https://android.googlesource.com/platform/frameworks/opt/datetimepicker/
 
 DateTimePicker is a library which contains the beautiful DatePicker and TimePicker that can be seen in the new Google Agenda app.
 
-**This picker is available for 2.1+**
+**This picker is available for 2.1+ but requires that you use AppCompat**
 
 You have a recurrence picker in the same style [here](https://github.com/Shusshu/Android-RecurrencePicker).
 
@@ -27,7 +27,7 @@ Or browse the [source code of the sample application][3] for a complete example 
 
 ## Including in your project
 
-Last version is 0.0.4
+Last version is 0.0.5
 
 Just add the following in your build.gradle
 
@@ -39,7 +39,7 @@ repositories{
 }
 
 dependencies {
-    compile 'com.github.jaydeep17:datetimepicker:0.0.4'
+    compile 'com.github.RomuloVitoi:datetimepicker:0.0.5'
 }
 ```
 
@@ -58,14 +58,9 @@ dependencies {
   ```
   For more info look at the source code of the provided sample [here][4]
 
-2. **Change Dialog Primary Color**
+2. **Dialog Color**
 
-  Override the following colors in your project
-
-  ```xml
-  <color name="datepicker_primary">#ff4CAF50</color>
-  <color name="datepicker_primary_dark">#ff388E3C</color>
-  ```
+  The dialog uses the colorPrimary, colorPrimaryDark and colorAccent from your AppCompat theme.
 
 3. **Set Min/Max Date**
   ```java
